@@ -1,0 +1,32 @@
+server:
+  port: 8071
+spring:
+  application:
+    name: schools
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+  producer:
+    bootstrap-servers: localhost:9092
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    #value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+
+
+application:
+  config:
+    students-url: http://localhost:8070/api/students
+    teachers-url: http://localhost:8072/api/teachers
+
+
