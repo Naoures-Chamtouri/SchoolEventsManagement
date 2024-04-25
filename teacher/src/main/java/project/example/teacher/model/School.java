@@ -1,5 +1,4 @@
-package project.example.school.model;
-
+package project.example.teacher.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -22,10 +21,8 @@ public class School {
     private String schoolName;
     private String schoolLocation;
 
-    private String manager;
-
     @OneToMany(mappedBy="school",
-    cascade = CascadeType.ALL)
+            cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Event> events;
 

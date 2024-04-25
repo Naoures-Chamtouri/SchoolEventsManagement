@@ -19,7 +19,7 @@ public class schoolService {
         repository.save(school);
     }
 
-    public School findSchool(int id){
+    public School findSchool(Integer id){
        var school= repository.findById(id).orElse(
                 School.builder()
                         .schoolName("NOT_FOUND")

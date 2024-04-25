@@ -26,4 +26,9 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       #value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
+application:
+  config:
+    school-url: http://localhost:8071/api/schools
+
+
 

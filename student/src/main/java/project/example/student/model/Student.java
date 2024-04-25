@@ -1,4 +1,4 @@
-package project.example.school.model;
+package project.example.student.model;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -9,24 +9,22 @@ import java.util.List;
 
 @Entity
 @Builder
-@Setter
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class School {
-
+@Getter
+@Setter
+public class Student {
 
     @Id
     @GeneratedValue
+    private Integer studentId;
+    private String firstName;
+    private String lastName;
     private Integer schoolId;
-    private String schoolName;
-    private String schoolLocation;
-
-    private String manager;
-
-    @OneToMany(mappedBy="school",
-    cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="event",
+            cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Event> events;
+    private List<studentEvent> Events;
+
 
 }

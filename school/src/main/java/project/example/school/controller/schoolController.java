@@ -34,7 +34,7 @@ public class schoolController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public ResponseEntity<School> getSchool(@PathVariable("id") int id){
+    public ResponseEntity<School> getSchool(@PathVariable("id") Integer id){
         return ResponseEntity.ok(service.findSchool(id));
     }
 

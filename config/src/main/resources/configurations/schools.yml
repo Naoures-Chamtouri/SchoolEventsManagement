@@ -10,7 +10,7 @@ spring:
     password:
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -26,7 +26,7 @@ spring:
 
 application:
   config:
-    students-url: http://localhost:8070/api/students
+    student-url: http://localhost:8070/api/students
     teachers-url: http://localhost:8072/api/teachers
 
 
