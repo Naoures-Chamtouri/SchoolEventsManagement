@@ -5,12 +5,12 @@ spring:
     name: students
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springboot
+    url: jdbc:mysql://localhost:3306/student
     username: root
     password:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
     properties:
       hibernate:

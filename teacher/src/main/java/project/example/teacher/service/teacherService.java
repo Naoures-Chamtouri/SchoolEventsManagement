@@ -60,7 +60,7 @@ public class teacherService {
 
     }
 
-    public void addEvent(String manager, eventDTO event){
+    public void addEvent(String manager, eventDTO  event){
         eventclient.saveEvent(manager,event);
 
 

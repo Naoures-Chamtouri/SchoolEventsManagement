@@ -1,23 +1,30 @@
 package project.example.student.model;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
+
 @Entity
 @Builder
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-public class studentEvent {
-
+@ToString
+public class Event {
     @Id
     @GeneratedValue
-    private Integer student_eventId;
+    private Integer eventId;
+    private String eventName;
+    private String eventDescription;
+    private LocalDate eventDate;
+
     @ManyToOne
-    @JoinColumn(name = "studentId")
+    @JoinColumn(name = "schoolId")
     @JsonBackReference
-    private Student student;
+    private School school;
+
 }
