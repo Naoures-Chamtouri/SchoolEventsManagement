@@ -26,4 +26,15 @@ public class Event {
     @JoinColumn(name = "schoolId")
     @JsonBackReference
     private School school;
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventId=" + eventId +
+                ", eventName='" + eventName + '\'' +
+                ", eventDescription='" + eventDescription + '\'' +
+                ", eventDate=" + eventDate +
+                ", school=" + school +
+                '}';
+    }
 }
