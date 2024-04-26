@@ -21,7 +21,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private Integer schoolId;
-    @OneToMany(mappedBy="event",
+    @OneToMany(mappedBy="student",
             cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<studentEvent> Events;

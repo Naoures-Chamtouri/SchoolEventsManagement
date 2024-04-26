@@ -10,6 +10,7 @@ import project.example.student.service.studentService;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/students")
 public class studentController {
 
     private final studentService service;
