@@ -33,6 +33,15 @@ public class schoolService {
         return repository.findAll();
     }
 
+    public String getSchoolManager(int id){
+        var school= repository.findById(id).orElse(
+                School.builder()
+                        .schoolName("NOT_FOUND")
+                        .schoolLocation("NOT_FOUND")
+                        .build()
+        );
+        return school.getManger();
+    }
 
 
 

@@ -19,6 +19,7 @@ public class School {
     @Id
     @GeneratedValue
     private Integer schoolId;
+    private String manger;
     private String schoolName;
     private String schoolLocation;
 

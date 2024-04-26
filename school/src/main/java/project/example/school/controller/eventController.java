@@ -17,8 +17,8 @@ public class eventController {
 
     private  final eventService service;
 
-
-    @PostMapping
+//("/{manager}")
+    @PostMapping("/{manager}")
     @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody Event event){
         service.saveEvent(event);
