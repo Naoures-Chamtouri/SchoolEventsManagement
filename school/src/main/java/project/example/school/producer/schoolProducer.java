@@ -1,4 +1,4 @@
-package project.example.teacher.producer;
+package project.example.school.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,18 +7,15 @@ import org.springframework.stereotype.Service;
 
 import static java.lang.String.format;
 
-
-@Slf4j
 @Service
+@Slf4j
 @RequiredArgsConstructor
-public class teacherProducer {
-
+public class schoolProducer {
 
     private final KafkaTemplate<String, String> kafkatemplate;
 
-      public void sendMessage(String msg) {
-          log.info(format("sending the msg::%s",msg));
-          kafkatemplate.send("request",msg);
-      }
-      }
-
+    public void sendResponse(String msg) {
+        log.info(format("sending the msg::%s",msg));
+        kafkatemplate.send("Response",msg);
+    }
+}

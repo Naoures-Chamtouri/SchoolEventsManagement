@@ -1,6 +1,7 @@
 package project.example.school.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import project.example.school.dto.eventDTO;
 import project.example.school.model.Event;
 import project.example.school.model.School;
 import project.example.school.repository.eventRepository;
@@ -15,8 +16,9 @@ public class eventService {
     private final eventRepository repository;
 
 
-    public void saveEvent(Event event) {
+    public String saveEvent(Event event) {
         repository.save(event);
+        return "event added";
     }
 
     public Event findEvent(Integer id){

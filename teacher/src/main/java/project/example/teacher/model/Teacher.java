@@ -24,4 +24,6 @@ public class Teacher {
             cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<teacherEvent> events;
+
+
 }

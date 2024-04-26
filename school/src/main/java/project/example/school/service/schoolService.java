@@ -34,6 +34,13 @@ public class schoolService {
     }
 
 
+    public String findKey(Integer Id){
+        School school =findSchool(Id);
+        return school.getManager();
+
+    }
+
+
 
 
 

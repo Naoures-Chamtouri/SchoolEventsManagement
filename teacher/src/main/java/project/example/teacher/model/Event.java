@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Event {
         @Id
         @GeneratedValue

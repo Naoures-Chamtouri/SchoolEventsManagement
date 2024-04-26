@@ -11,6 +11,6 @@ import org.springframework.kafka.config.TopicBuilder;
 public class kafkaConfig {
     @Bean
     public NewTopic eventTopic(){
-        return TopicBuilder.name("event").build();
+        return TopicBuilder.name("Response").build();
     }
 }

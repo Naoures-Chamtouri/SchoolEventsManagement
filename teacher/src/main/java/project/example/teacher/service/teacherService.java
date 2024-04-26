@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import project.example.teacher.client.eventClient;
+import project.example.teacher.dto.eventDTO;
+import project.example.teacher.dto.teacherDto;
+import project.example.teacher.model.Event;
 import project.example.teacher.model.School;
 import project.example.teacher.model.Teacher;
 import project.example.teacher.repository.teacherRepository;
@@ -28,6 +31,8 @@ public class teacherService {
         repository.save(teacher);
     }
 
+
+
     public List<Teacher> getAll(){
 
         return repository.findAll();
@@ -46,6 +51,18 @@ public class teacherService {
     public School getSchoolEvents(Integer id){
         var events=eventclient.findSchool(id);
         return events;
+
+    }
+    public String stringTeacher(Integer teacherId){
+        var teacher=repository.findById(teacherId).orElse(null);
+        var teacherDTO=new teacherDto(teacher.getTeacherId(),teacher.getFirstName(),teacher.getLastName(),teacher.getSchoolId());
+        return teacherDTO.toString();
+
+    }
+
+    public void addEvent(String manager, eventDTO event){
+        eventclient.saveEvent(manager,event);
+
 
     }
 
