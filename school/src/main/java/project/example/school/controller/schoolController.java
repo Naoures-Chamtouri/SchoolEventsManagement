@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import project.example.school.Track;
 import project.example.school.model.Event;
 import project.example.school.model.School;
 import project.example.school.service.schoolService;
@@ -24,7 +25,7 @@ public class schoolController {
             @RequestBody School school) {
         service.saveSchool(school);
     }
-
+    @Track(isLocked = false)
     @GetMapping
     @ResponseStatus(HttpStatus.FOUND)
     public ResponseEntity<List<School>> getAll(){
